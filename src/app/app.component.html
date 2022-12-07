@@ -1,5 +1,5 @@
     <!-- Navbar -->
-<app-header (sendSearch)="onSubmtitSearch($event)"></app-header>
+<app-header (elementCreated)="onElementCreated($event)" (sendSearch)="onSubmtitSearch($event)"></app-header>
     <!-- End Navbar -->
 
     <!-- Main -->
@@ -7,7 +7,7 @@
 
       <!-- Carousel -->
       <section id="carousel">
-        <app-carrosel></app-carrosel>
+        <app-carrosel (elementCreated)="onElementCreated($event)"></app-carrosel>
       </section>
       <!-- End Carousel -->
 
@@ -35,12 +35,12 @@
       </section>
       <!-- End Contact -->
 
-      <app-button></app-button>
+      <app-button (elementCreated)="onElementCreated($event)" ></app-button>
     </main>
     <!-- End Main -->
 
     <!-- Footer -->
-    <app-footer [footerData]="data.footer"></app-footer>
+    <app-footer [footerData]="data.footer" (elementCreated)="onElementCreated($event)"></app-footer>
     <!-- End Footer -->
 
 
