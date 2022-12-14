@@ -1,8 +1,16 @@
 <div class="container">
   <h1 class="text-center mb-4">Contato</h1>
+
+  <div class="mb-3">
+  <label for="NAME" class="form-label">Name</label>
+  <input
+  class="form-control"
+  id="name" type="text">
+  </div>
+  
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label"
-      >Email</label
+    >Email</label
     >
     <input
       type="email"
@@ -14,6 +22,7 @@
     />
     <!-- (change)="showInputData($event)" -->
   </div>
+
   <div class="mb-3">
     <label for="exampleFormControlTextarea1" class="form-label"
       >Mensagem</label
@@ -25,5 +34,9 @@
       [(ngModel)]="formData.message"
     ></textarea>
   </div>
+
+
+
+
   <button class="btn btn-primary" [disabled]="btnDisabled" (click)="submitForm()" >Enviar</button>
 </div>

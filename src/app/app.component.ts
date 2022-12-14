@@ -1,3 +1,4 @@
+import { CadastroData } from './models/cadastro-data.model';
 import { Component } from '@angular/core';
 import { AddressSectionData } from './models/address-section-data.model.data';
 import { AppData } from './models/app-data.model';
@@ -58,6 +59,7 @@ export class AppComponent {
     }
   }
 
+
   onElementCreated(element: string): void {
     console.log('Elemento criado: ', element)
   }
@@ -68,6 +70,10 @@ export class AppComponent {
 
   onContactFormSubitted(formData: ContactFormData): void {
     console.log('Formulário enviado com sucesso: ', formData)
+  }
+
+  onCadastrotFormSubitted(formData: CadastroData): void {
+    console.log('Perfil cadastrado com sucesso: ', formData)
   }
 
   onFeatureCreated(featureDataModel: FeatureSectionData): void {

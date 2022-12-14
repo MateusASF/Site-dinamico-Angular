@@ -10,7 +10,8 @@ import { EnderecoComponent } from './components/endereco/endereco.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +23,13 @@ import { FormsModule } from '@angular/forms';
     EnderecoComponent,
     ContatoComponent,
     FooterComponent,
-    ButtonComponent
+    ButtonComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
     //NgbCarouselModule
   ],
   providers: [],

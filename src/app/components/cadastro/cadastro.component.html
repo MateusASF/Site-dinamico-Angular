@@ -1,0 +1,50 @@
+<div class="container">
+    <h1 class="text-center mb-4">Cadastro</h1>
+    <form [formGroup]="formData">
+        <label for="nome" class="form-label">Name: </label>
+        <input id="nome" type="text" formControlName="nome" class="form-control"
+            [ngClass]="{ 'is-invalid': formData.controls['nome'].errors && formData.controls['nome'].touched}">
+            <div *ngIf="formData.controls['nome'].errors && formData.controls['nome'].touched" class="invalid-feedback">Erro</div>
+
+            <label for="cpf" class="form-label">CPF: </label>
+            <input id="cpf" type="text" formControlName="cpf" class="form-control">
+
+            <label for="nascimento" class="form-label">Nascimento: </label>
+            <input id="nascimento" type="text" formControlName="nascimento" class="form-control">
+
+            <!-- fazer novo form group? -->
+
+            <div formGroupName="endereco">
+                <label for="street" class="form-label">Logradouro: </label>
+                <input id="street" type="text" formControlName="street" class="form-control">
+                <label for="city" class="form-label">Cidade: </label>
+                <input id="city" type="text" formControlName="city" class="form-control">
+                <label for="state" class="form-label">Estado: </label>
+                <select class="form-select" aria-label="Default select example" formControlName="state">
+                    <option selected>Selecione--</option>
+                    <option *ngFor="let state of states" [value]="state.sigla">{{state.nome}}</option>
+                </select>
+                <label for="zip" class="form-label">CEP: </label>
+                <input id="zip" type="text" formControlName="zip" class="form-control">
+            </div>
+
+            <!-- div do endereço -->
+
+            <!-- fazer novo form group? -->
+            <div formGroupName="contato">
+                <label for="telefone" class="form-label">Telefone: </label>
+                <input id="telefone" type="tel" formControlName="telefone" class="form-control">
+                <label for="email" class="form-label">Email: </label>
+                <input id="email" type="email" formControlName="email" class="form-control">
+            </div>
+            <!-- div do contato -->
+
+            <label for="username" class="form-label">Username: </label>
+            <input id="username" type="text" formControlName="username" class="form-control">
+
+            <label for="senha" class="form-label">Senha: </label>
+            <input id="senha" type="password" formControlName="senha" class="form-control">
+
+            <button class="btn btn-primary" (click)="onSubmit()">Cadastrar</button>
+    </form>
+</div>
